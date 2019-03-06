@@ -167,25 +167,29 @@ export class NgxSmileComponent implements OnInit {
       keyTimeBlinkStart + blinkDurationPrct * 0.1}; ${
       keyTimeBlinkStart + blinkDurationPrct * 0.2}`; // 0.955; 0.96 for 3000ms
 
+    this.blinkTimings.y = this.getBlinkTimingsY(animationDuration, defaultWidth, keyTimeBlinkStart, keyTimesPrct, repeatCount);
 
-    this.blinkTimings.y = {
+    this.blinkTimings.x = this.getBlinkTimgingsX(animationDuration, defaultWidth, keyTimesPrct, repeatCount);
+  }
+
+  getBlinkTimingsY = (animationDuration: number, defaultWidth: number,
+    keyTimeBlinkStart: number, keyTimesPrct: string, repeatCount: string) => ({
       attributeName: 'ry',
       fill: 'remove',
       dur: `${animationDuration}ms`,
       repeatCount,
       values: `${defaultWidth}; ${defaultWidth}; ${defaultWidth * 1.25}; 0; ${defaultWidth}`,
       keyTimes: `0; ${keyTimeBlinkStart}; ${keyTimesPrct}; 1` // "0; 0.95; 0.955; 0.96; 1" for 3000ms
-    };
+  })
 
-    this.blinkTimings.x = {
-      attributeName: 'rx',
-      fill: 'remove',
-      dur: `${animationDuration}ms`,
-      repeatCount,
-      values: `${defaultWidth}; ${defaultWidth}; ${defaultWidth * 1.25}; ${defaultWidth}`,
-      keyTimes: `0; ${keyTimesPrct}; 1` // "0; 0.955; 0.96; 1" for 3000ms
-    };
-  }
+  getBlinkTimgingsX = (animationDuration: number, defaultWidth: number, keyTimesPrct: string, repeatCount: string) => ({
+    attributeName: 'rx',
+    fill: 'remove',
+    dur: `${animationDuration}ms`,
+    repeatCount,
+    values: `${defaultWidth}; ${defaultWidth}; ${defaultWidth * 1.25}; ${defaultWidth}`,
+    keyTimes: `0; ${keyTimesPrct}; 1` // "0; 0.955; 0.96; 1" for 3000ms
+  })
 }
 
 interface SvgCircleData {

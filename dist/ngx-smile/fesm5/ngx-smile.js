@@ -42,6 +42,37 @@ var NgxSmileComponent = /** @class */ (function () {
         this.blinkTimings = { x: {}, y: {} };
         this.debug = undefined;
         this.showLines = false;
+        this.getBlinkTimingsY = (/**
+         * @param {?} animationDuration
+         * @param {?} defaultWidth
+         * @param {?} keyTimeBlinkStart
+         * @param {?} keyTimesPrct
+         * @param {?} repeatCount
+         * @return {?}
+         */
+        function (animationDuration, defaultWidth, keyTimeBlinkStart, keyTimesPrct, repeatCount) { return ({
+            attributeName: 'ry',
+            fill: 'remove',
+            dur: animationDuration + "ms",
+            repeatCount: repeatCount,
+            values: defaultWidth + "; " + defaultWidth + "; " + defaultWidth * 1.25 + "; 0; " + defaultWidth,
+            keyTimes: "0; " + keyTimeBlinkStart + "; " + keyTimesPrct + "; 1" // "0; 0.95; 0.955; 0.96; 1" for 3000ms
+        }); });
+        this.getBlinkTimgingsX = (/**
+         * @param {?} animationDuration
+         * @param {?} defaultWidth
+         * @param {?} keyTimesPrct
+         * @param {?} repeatCount
+         * @return {?}
+         */
+        function (animationDuration, defaultWidth, keyTimesPrct, repeatCount) { return ({
+            attributeName: 'rx',
+            fill: 'remove',
+            dur: animationDuration + "ms",
+            repeatCount: repeatCount,
+            values: defaultWidth + "; " + defaultWidth + "; " + defaultWidth * 1.25 + "; " + defaultWidth,
+            keyTimes: "0; " + keyTimesPrct + "; 1" // "0; 0.955; 0.96; 1" for 3000ms
+        }); });
     }
     /**
      * @return {?}
@@ -228,22 +259,8 @@ var NgxSmileComponent = /** @class */ (function () {
         var blinkDurationPrct = (blinkDuration) / animationDuration;
         /** @type {?} */
         var keyTimesPrct = keyTimeBlinkStart + blinkDurationPrct * 0.1 + "; " + (keyTimeBlinkStart + blinkDurationPrct * 0.2);
-        this.blinkTimings.y = {
-            attributeName: 'ry',
-            fill: 'remove',
-            dur: animationDuration + "ms",
-            repeatCount: repeatCount,
-            values: defaultWidth + "; " + defaultWidth + "; " + defaultWidth * 1.25 + "; 0; " + defaultWidth,
-            keyTimes: "0; " + keyTimeBlinkStart + "; " + keyTimesPrct + "; 1" // "0; 0.95; 0.955; 0.96; 1" for 3000ms
-        };
-        this.blinkTimings.x = {
-            attributeName: 'rx',
-            fill: 'remove',
-            dur: animationDuration + "ms",
-            repeatCount: repeatCount,
-            values: defaultWidth + "; " + defaultWidth + "; " + defaultWidth * 1.25 + "; " + defaultWidth,
-            keyTimes: "0; " + keyTimesPrct + "; 1" // "0; 0.955; 0.96; 1" for 3000ms
-        };
+        this.blinkTimings.y = this.getBlinkTimingsY(animationDuration, defaultWidth, keyTimeBlinkStart, keyTimesPrct, repeatCount);
+        this.blinkTimings.x = this.getBlinkTimgingsX(animationDuration, defaultWidth, keyTimesPrct, repeatCount);
     };
     NgxSmileComponent.decorators = [
         { type: Component, args: [{

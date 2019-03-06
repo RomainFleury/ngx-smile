@@ -53,6 +53,22 @@ export declare class NgxSmileComponent implements OnInit {
     drawRightEye(): void;
     drawSmile(): void;
     setupEyesAnimations(): void;
+    getBlinkTimingsY: (animationDuration: number, defaultWidth: number, keyTimeBlinkStart: number, keyTimesPrct: string, repeatCount: string) => {
+        attributeName: string;
+        fill: string;
+        dur: string;
+        repeatCount: string;
+        values: string;
+        keyTimes: string;
+    };
+    getBlinkTimgingsX: (animationDuration: number, defaultWidth: number, keyTimesPrct: string, repeatCount: string) => {
+        attributeName: string;
+        fill: string;
+        dur: string;
+        repeatCount: string;
+        values: string;
+        keyTimes: string;
+    };
 }
 interface SvgCircleData {
     positionX: number;
