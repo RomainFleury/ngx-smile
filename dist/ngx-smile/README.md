@@ -26,5 +26,5 @@ There is a debug mode that allows you to play with the parameters :
 
 
 ## Examples
-![](https://github.com/RomainFleury/ngx-smile/blob/master/example.png)
+![](https://github.com/RomainFleury/ngx-smile/blob/master/example.png?raw=true)
 
