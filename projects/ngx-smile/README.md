@@ -16,8 +16,7 @@ Then just, as in the examples, use it :
 <ngx-smile threshold="1"></ngx-smile>
 ```
 
-The only required parameter is "threshold". It can be any number, but it has to be a number. So for example `1`, or `0`, or `-42`, or `666`.
-
+The only required parameter is "threshold", and it should be between `-1` and `1`, `-1` is sad, `1` is happy..
 The smile will depend on it.
 
 ### More
