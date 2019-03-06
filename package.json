@@ -1,7 +1,7 @@
 {
   "name": "smile-library",
   "version": "1.0.0",
-  "author": "Romain Fleury",
+  "author": "Romain Fleury <fleury@romain.in> (https://github.com/RomainFleury)",
   "license": "MIT",
   "repository": {
     "type": "git",

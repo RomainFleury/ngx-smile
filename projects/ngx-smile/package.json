@@ -2,7 +2,7 @@
   "name": "ngx-smile",
   "version": "1.0.0",
   "description": "an angular component to display smiles/faces on a web page",
-  "author": "Romain Fleury",
+  "author": "Romain Fleury <fleury@romain.in> (https://github.com/RomainFleury)",
   "license": "MIT",
   "repository": {
     "type": "git",
