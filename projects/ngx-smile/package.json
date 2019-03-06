@@ -2,6 +2,16 @@
   "name": "ngx-smile",
   "version": "1.0.0",
   "description": "an angular component to display smiles/faces on a web page",
+  "author": "Romain Fleury",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/youraccount/angular-amazing.git"
+  },
+  "homepage": "https://github.com/youraccount/angular-amazing",
+  "bugs": {
+    "url": "https://github.com/youraccount/angular-amazing/issues"
+  },
   "peerDependencies": {
     "@angular/common": "^7.2.0",
     "@angular/core": "^7.2.0"

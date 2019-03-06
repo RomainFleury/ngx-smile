@@ -1,6 +1,16 @@
 {
   "name": "smile-library",
-  "version": "0.0.0",
+  "version": "1.0.0",
+  "author": "Romain Fleury",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/RomainFleury/ngx-smile.git"
+  },
+  "homepage": "https://github.com/RomainFleury/ngx-smile",
+  "bugs": {
+    "url": "https://github.com/RomainFleury/ngx-smile/issues"
+  },
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
