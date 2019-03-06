@@ -1,0 +1,38 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+  <h1>
+    {{ title }} Demo :)
+  </h1>
+</div>
+<div class="main">
+  <div class="container">
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>Smile</mat-card-title>
+        <mat-card-subtitle>Demo</mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-content>
+        <div class="u-text-center">
+          <ngx-smile threshold="-1"></ngx-smile>
+          <ngx-smile threshold="-0.5"></ngx-smile>
+          <ngx-smile threshold="0"></ngx-smile>
+          <ngx-smile threshold="0.5"></ngx-smile>
+          <ngx-smile threshold="1"></ngx-smile>
+        </div>
+        <div class="u-text-center">
+          <ngx-smile threshold="1" showDebug="true"></ngx-smile>
+        </div>
+        <div class="u-text-center">
+          <ngx-smile threshold="0.75" size="100"></ngx-smile>
+          <ngx-smile threshold="-0.75" size="200" faceColor="orange"></ngx-smile>
+          <ngx-smile threshold="0.3" size="150" faceColor="pink" thickness="10" borderColor="blue" blinkRepeatSpeed="1000"></ngx-smile>
+          <ngx-smile threshold="0.8" size="150" faceColor="lightblue" thickness="2" borderColor="magenta"
+            blinkRepeatSpeed="500" mouthVariation="-10"></ngx-smile>
+        </div>
+      </mat-card-content>
+      <mat-card-actions class="u-text-right">
+        <button mat-button></button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+</div>

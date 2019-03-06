@@ -1,0 +1,72 @@
+<div class="all-container">
+  <div class="smile-container">
+    <svg [attr.width]="dimension" [attr.height]="dimension" class="smile" shape-rendering="geometricPrecision">
+      <circle [attr.cx]="head.positionX" [attr.cy]="head.positionY" [attr.r]="head.ray" [attr.stroke]="head.strokeColor"
+        [attr.stroke-width]="head.strokeWidth" [attr.fill]="head.fillColor" />
+      <g class="eye" id="leftEye">
+        <ellipse [attr.cx]="leftEye.positionX" [attr.cy]="leftEye.positionY" [attr.rx]="leftEye.ray" [attr.ry]="leftEye.ray"
+          [attr.stroke]="head.strokeColor" [attr.stroke-width]="leftEye.strokeWidth" [attr.fill]="leftEye.fillColor">
+          <animate [attr.attributeName]="blinkTimings.y.attributeName" [attr.fill]="blinkTimings.y.fill" [attr.dur]="blinkTimings.y.dur"
+            [attr.repeatCount]="blinkTimings.y.repeatCount" [attr.values]="blinkTimings.y.values" [attr.keyTimes]="blinkTimings.y.keyTimes" />
+          <animate [attr.attributeName]="blinkTimings.x.attributeName" [attr.fill]="blinkTimings.x.fill" [attr.dur]="blinkTimings.x.dur"
+            [attr.repeatCount]="blinkTimings.x.repeatCount" [attr.values]="blinkTimings.x.values" [attr.keyTimes]="blinkTimings.x.keyTimes" />
+        </ellipse>
+      </g>
+      <g class="eye" id="rightEye">
+        <ellipse [attr.cx]="rightEye.positionX" [attr.cy]="rightEye.positionY" [attr.rx]="rightEye.ray" [attr.ry]="rightEye.ray"
+          [attr.stroke]="rightEye.strokeColor" [attr.stroke-width]="rightEye.strokeWidth" [attr.fill]="rightEye.fillColor">
+          <animate [attr.attributeName]="blinkTimings.y.attributeName" [attr.fill]="blinkTimings.y.fill" [attr.dur]="blinkTimings.y.dur"
+            [attr.repeatCount]="blinkTimings.y.repeatCount" [attr.values]="blinkTimings.y.values" [attr.keyTimes]="blinkTimings.y.keyTimes" />
+          <animate [attr.attributeName]="blinkTimings.x.attributeName" [attr.fill]="blinkTimings.x.fill" [attr.dur]="blinkTimings.x.dur"
+            [attr.repeatCount]="blinkTimings.x.repeatCount" [attr.values]="blinkTimings.x.values" [attr.keyTimes]="blinkTimings.x.keyTimes" />
+        </ellipse>
+      </g>
+
+      <!-- <path [attr.cx]="mouth.positionX" [attr.cy]="mouth.positionY" [attr.d]="mouth.top" [attr.stroke]="mouth.strokeColor"
+        [attr.stroke-width]="mouth.strokeWidth" [attr.fill]="mouth.fillColor" /> -->
+
+      <!-- legit mouth -->
+      <!-- <path [attr.cx]="mouth.positionX" [attr.cy]="mouth.positionY" [attr.d]="mouth.d" [attr.stroke]="mouth.strokeColor"
+        [attr.stroke-width]="mouth.strokeWidth" [attr.fill]="mouth.fillColor" /> -->
+
+        <path [attr.d]="mouth.d" [attr.stroke]="mouth.strokeColor"
+        [attr.stroke-width]="mouth.strokeWidth" [attr.fill]="mouth.fillColor" />
+
+      <!-- Debug to show how we drow the mouth -->
+      <g *ngIf="showDebug && showLines">
+        <circle [attr.cx]="debug.leftTop.x" [attr.cy]="debug.leftTop.y" r="2" [attr.fill]="debug.leftTop.color" />
+        <path [attr.d]="debug.leftLine" stroke-width="2" stroke="#55f" />
+        <circle [attr.cx]="debug.leftBottom.x" [attr.cy]="debug.leftBottom.y" r="2" [attr.fill]="debug.leftBottom.color" />
+        <path [attr.d]="debug.rightLine" stroke-width="2" stroke="#55f" />
+        <circle [attr.cx]="debug.rightBottom.x" [attr.cy]="debug.rightBottom.y" r="2" [attr.fill]="debug.rightBottom.color" />
+        <circle [attr.cx]="debug.rightTop.x" [attr.cy]="debug.rightTop.y" r="2" [attr.fill]="debug.rightTop.color" />
+      </g>
+    </svg>
+  </div>
+  <div class="controls" *ngIf="showDebug">
+    <h2>Hapiness lvl : {{ threshold }}</h2>
+    <div>
+      <!-- <mat-slide-toggle [(ngModel)]="showLines">Show smile drawing lines</mat-slide-toggle> -->
+    </div>
+    <div>
+      <label>Happiness ({{ threshold }}) :</label>
+      <!-- <mat-slider min="-1" max="1" step="0.01" [(ngModel)]="threshold" (change)="udpateSmileSlider($event)"></mat-slider> -->
+    </div>
+    <div>
+      <label>Variation ({{mouthVariation}}) :</label>
+      <!-- <mat-slider min="-20" max="20" step="1" [(ngModel)]="mouthVariation" (change)="udpateSmileSlider($event)"></mat-slider> -->
+    </div>
+    <div>
+      <label>Max Mouth Height {{maxMouthHeigth}} :</label>
+      <!-- <mat-slider min="0" max="150" step="1" [(ngModel)]="maxMouthHeigth" (change)="udpateSmileSlider($event)"></mat-slider> -->
+    </div>
+    <div>
+      <label>Blink Speed {{blinkRepeatSpeed | number}} :</label>
+      <!-- <mat-slider min="200" max="5000" step="100" [(ngModel)]="blinkRepeatSpeed" (change)="udpateSmileSlider($event)"></mat-slider> -->
+    </div>
+    <div>
+      <label>Thickness {{thickness}} :</label>
+      <!-- <mat-slider min="1" max="15" step="1" [(ngModel)]="thickness" (change)="udpateSmileSlider($event)"></mat-slider> -->
+    </div>
+  </div>
+</div>
