@@ -1,6 +1,7 @@
 {
   "name": "ngx-smile",
-  "version": "0.0.1",
+  "version": "1.0.0",
+  "description": "an angular component to display smiles/faces on a web page",
   "peerDependencies": {
     "@angular/common": "^7.2.0",
     "@angular/core": "^7.2.0"
