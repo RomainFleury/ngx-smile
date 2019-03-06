@@ -22,14 +22,8 @@
         </ellipse>
       </g>
 
-      <!-- <path [attr.cx]="mouth.positionX" [attr.cy]="mouth.positionY" [attr.d]="mouth.top" [attr.stroke]="mouth.strokeColor"
-        [attr.stroke-width]="mouth.strokeWidth" [attr.fill]="mouth.fillColor" /> -->
-
       <!-- legit mouth -->
-      <!-- <path [attr.cx]="mouth.positionX" [attr.cy]="mouth.positionY" [attr.d]="mouth.d" [attr.stroke]="mouth.strokeColor"
-        [attr.stroke-width]="mouth.strokeWidth" [attr.fill]="mouth.fillColor" /> -->
-
-        <path [attr.d]="mouth.d" [attr.stroke]="mouth.strokeColor"
+      <path [attr.d]="mouth.d" [attr.stroke]="mouth.strokeColor"
         [attr.stroke-width]="mouth.strokeWidth" [attr.fill]="mouth.fillColor" />
 
       <!-- Debug to show how we drow the mouth -->
@@ -45,27 +39,34 @@
   </div>
   <div class="controls" *ngIf="showDebug">
     <h2>Hapiness lvl : {{ threshold }}</h2>
-    <div>
+    <div class="debug-info">
+      <label for="showLines">Show smile drawing lines</label>
+      <input type="checkbox" name="showLines" [(ngModel)]="showLines" />
       <!-- <mat-slide-toggle [(ngModel)]="showLines">Show smile drawing lines</mat-slide-toggle> -->
     </div>
-    <div>
-      <label>Happiness ({{ threshold }}) :</label>
+    <div class="debug-info">
+      <label for="threshold">Happiness ({{ threshold }})</label>
+      <input name="threshold" type="number" min="-1" max="1" [(ngModel)]="threshold" (change)="udpateSmileSlider($event)"/>
       <!-- <mat-slider min="-1" max="1" step="0.01" [(ngModel)]="threshold" (change)="udpateSmileSlider($event)"></mat-slider> -->
     </div>
-    <div>
-      <label>Variation ({{mouthVariation}}) :</label>
+    <div class="debug-info">
+      <label for="mouthVariation">Variation ({{mouthVariation}}) :</label>
+      <input name="mouthVariation" type="number" min="-20" max="20" [(ngModel)]="mouthVariation" (change)="udpateSmileSlider($event)"/>
       <!-- <mat-slider min="-20" max="20" step="1" [(ngModel)]="mouthVariation" (change)="udpateSmileSlider($event)"></mat-slider> -->
     </div>
-    <div>
-      <label>Max Mouth Height {{maxMouthHeigth}} :</label>
+    <div class="debug-info">
+      <label for="maxMouthHeigth">Max Mouth Height {{maxMouthHeigth}} :</label>
+      <input name="maxMouthHeigth" type="number" min="-20" max="20" [(ngModel)]="maxMouthHeigth" (change)="udpateSmileSlider($event)"/>
       <!-- <mat-slider min="0" max="150" step="1" [(ngModel)]="maxMouthHeigth" (change)="udpateSmileSlider($event)"></mat-slider> -->
     </div>
-    <div>
-      <label>Blink Speed {{blinkRepeatSpeed | number}} :</label>
+    <div class="debug-info">
+      <label for="blinkRepeatSpeed">Blink Speed {{blinkRepeatSpeed | number}} :</label>
+      <input name="blinkRepeatSpeed" type="number" min="200" max="5000" [(ngModel)]="blinkRepeatSpeed" (change)="udpateSmileSlider($event)"/>
       <!-- <mat-slider min="200" max="5000" step="100" [(ngModel)]="blinkRepeatSpeed" (change)="udpateSmileSlider($event)"></mat-slider> -->
     </div>
-    <div>
-      <label>Thickness {{thickness}} :</label>
+    <div class="debug-info">
+      <label for="thickness">Thickness {{thickness}} :</label>
+      <input name="thickness" type="number" min="1" max="15" [(ngModel)]="thickness" (change)="udpateSmileSlider($event)"/>
       <!-- <mat-slider min="1" max="15" step="1" [(ngModel)]="thickness" (change)="udpateSmileSlider($event)"></mat-slider> -->
     </div>
   </div>
