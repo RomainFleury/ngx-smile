@@ -4,7 +4,7 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { MatButtonModule, MatCardModule } from '@angular/material';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
-import { NgxSmileModule } from 'projects/ngx-smile/src/public_api';
+import { NgxSmileModule } from 'ngx-smile';
 
 @NgModule({
   declarations: [
