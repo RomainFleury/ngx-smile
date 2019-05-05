@@ -1,6 +1,6 @@
+import { Injectable, defineInjectable, Component, Input, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { Injectable, Component, Input, defineInjectable, NgModule } from '@angular/core';
 
 /**
  * @fileoverview added by tsickle
@@ -274,6 +274,5 @@ NgxSmileModule.decorators = [
  * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 
-export { NgxSmileService, NgxSmileComponent, NgxSmileModule };
-
+export { NgxSmileComponent, NgxSmileModule, NgxSmileService };
 //# sourceMappingURL=ngx-smile.js.map
