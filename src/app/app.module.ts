@@ -1,9 +1,10 @@
 import { NgxSmileModule } from 'ngx-smile';
-// import { NgxSmileModule } from 'projects/ngx-smile/src/public_api';
 
+// import { NgxSmileModule } from 'projects/ngx-smile/src/public_api';
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
-import { MatButtonModule, MatCardModule } from '@angular/material';
+import { MatButtonModule } from '@angular/material/button';
+import { MatCardModule } from '@angular/material/card';
 import { BrowserModule } from '@angular/platform-browser';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 
